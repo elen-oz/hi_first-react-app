@@ -1,12 +1,15 @@
 const Food = () => {
-  const food1 = 'Orange';
-  const food2 = 'Pineapple';
+  const food = [
+    { id: crypto.randomUUID(), fruit: '🍏 Apple' },
+    { id: crypto.randomUUID(), fruit: '🍊 Orange' },
+    { id: crypto.randomUUID(), fruit: '🍍 Pineapple' },
+  ];
 
   return (
     <ul>
-      <li>Apple</li>
-      <li>{food1}</li>
-      <li>{food2.toUpperCase()}</li>
+      {food.map((item) => {
+        return <li key={item.id}>{item.fruit}</li>;
+      })}
     </ul>
   );
 };
